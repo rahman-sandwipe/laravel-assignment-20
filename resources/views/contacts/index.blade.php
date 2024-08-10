@@ -48,9 +48,9 @@
                     {{-- <td>{{ $row->created_at->format('d M,Y') }}</td> --}}
                     <td>
                         <div class="btn-group">
-                            <a href="{{ URL::to('/contacts/{id}') }}" class="btn btn-info">View</a>
-                            <a href="{{ URL::to('/contacts/{id}/edit') }}" class="btn btn-primary">Edit</a>
-                            <a href="{{ URL::to('/contacts/{id}') }}" class="btn btn-danger">Delete</a>
+                            <a href="{{ URL::to('/contacts/show',$row->id) }}" class="btn btn-info">View</a>
+                            <a href="{{ URL::to('/contacts/edit',$row->id) }}" class="btn btn-primary">Edit</a>
+                            <a href="{{ URL::to('/contacts/delete',$row->id) }}" class="btn btn-danger">Delete</a>
                         </div>
                     </td>
                 </tr>

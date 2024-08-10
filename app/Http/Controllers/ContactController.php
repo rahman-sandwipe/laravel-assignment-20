@@ -24,19 +24,25 @@ class ContactController extends Controller
         return redirect(url('/contects'));
     }
 
+
     // GET /contacts/{id}: Show a specific contact
     public function show(string $id){
-        return view('contacts.show');
+        $showdata=Contact::find($id);
+        return view('contacts.show', compact('showdata'));
     }
 
     // GET /contacts/{id}/edit: Show the form to edit a contact
     public function edit(string $id){
-        return view('contacts.edit');
+        $data=Contact::find($id);
+        return view('contacts.edit',compact('data'));
     }
 
     // PUT /contacts/{id}: Update a contact
     public function update(Request $request, string $id){
-        //
+        $getData=Contact::find($id);
+        $data=$request->all();
+        $getData->fill($data)->save();
+        return redirect(url('/contects'));
     }
 
     // DELETE /contacts/{id}: Delete a contact

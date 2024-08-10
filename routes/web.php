@@ -15,14 +15,14 @@ Route::get('/contacts/create', [ContactController::class, 'create']);
 // POST /contacts: Store a new contact
 Route::post('/contacts/store', [ContactController::class, 'store']);
 
-Route::get('/contacts/{id}', [ContactController::class, 'show']);
+Route::get('/contacts/show/{id}', [ContactController::class, 'show']);
 // GET /contacts/{id}: Show a specific contact
 
 // GET /contacts/{id}/edit: Show the form to edit a contact
-Route::get('/contacts/{id}/edit', [ContactController::class, 'edit']);
+Route::get('/contacts/edit/{id}', [ContactController::class, 'edit']);
 
 // PUT /contacts/{id}: Update a contact
-Route::put('/contacts/{id}', [ContactController::class, 'update']);
+Route::post('/contacts/edit/{id}', [ContactController::class, 'update']);
 
 // DELETE /contacts/{id}: Delete a contact
-Route::delete('/contacts/{id}', [ContactController::class, 'delete']);
+Route::get('/contacts/delete/{id}', [ContactController::class, 'delete']);
