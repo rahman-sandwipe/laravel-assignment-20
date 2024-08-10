@@ -26,8 +26,30 @@
         </style>
     </head>
     <body>
-        <div class="container">
-            <h2 class="text-center">Contacts</h2>
+        <div>
+            <div class="container" style="margin-top: 50px">
+                <div class="card mb-10">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="row">
+                                <form action="{{ url('/contacts') }}" method="GET">@csrf
+                                    <div class="col-md-10">
+                                        <input type="text" name="get" class="form-control" placeholder="search">
+                                    </div>
+                                    <div class="col-md-2">
+                                        <button type="submit" class="btn">search</button>    
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <h2 class="text-center">Contacts</h2>
             <table>
                 <tr>
                     <th>ID</th>
